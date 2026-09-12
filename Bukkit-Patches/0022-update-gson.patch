@@ -1,0 +1,22 @@
+From 52108fcb11d4e663f03dacb0a9abebdc5fb258c6 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 10:18:02 +0800
+Subject: [PATCH] update-gson
+
+
+diff --git a/pom.xml b/pom.xml
+index 0d3120cf..6eaa6490 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -74,7 +74,7 @@
+         <dependency>
+             <groupId>com.google.code.gson</groupId>
+             <artifactId>gson</artifactId>
+-            <version>2.8.0</version>
++            <version>2.14.0</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-- 
+2.55.0
+
