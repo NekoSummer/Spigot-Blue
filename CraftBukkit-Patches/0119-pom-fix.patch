@@ -1,0 +1,33 @@
+From 68f2b47fd800c33484713cd1dea3c039aaafd059 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 08:17:18 +0800
+Subject: [PATCH] pom fix
+
+
+diff --git a/pom.xml b/pom.xml
+index 23ab857e0..310c79c87 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -17,8 +17,8 @@
+         <buildtag.prefix>git-Bukkit-</buildtag.prefix>
+         <buildtag.suffix></buildtag.suffix>
+         <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+-        <maven.compiler.source>1.8</maven.compiler.source>
+-        <maven.compiler.target>1.8</maven.compiler.target>
++        <maven.compiler.source>8</maven.compiler.source>
++        <maven.compiler.target>8</maven.compiler.target>
+     </properties>
+ 
+     <parent>
+@@ -111,7 +111,7 @@
+                     <execution>
+                         <id>ex-spigot</id>
+                         <configuration>
+-                            <format>git-Spigot-%s</format>
++                            <format>git-SpigotBlue-%s</format>
+                             <scmDirectory>../</scmDirectory>
+                             <descriptionProperty>spigot.desc</descriptionProperty>
+                         </configuration>
+-- 
+2.55.0
+

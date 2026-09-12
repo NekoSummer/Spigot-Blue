@@ -1,0 +1,31 @@
+From 8759b3fabc98570e1f2f41a759fbb2598998edbb Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 08:17:18 +0800
+Subject: [PATCH] pom fix
+
+
+diff --git a/pom.xml b/pom.xml
+index b3369ecf..0d3120cf 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -8,14 +8,14 @@
+     <version>1.13.2-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Spigot-API</name>
++    <name>SpigotBlue-API</name>
+     <url>https://www.spigotmc.org/</url>
+     <description>An enhanced plugin API for Minecraft servers.</description>
+ 
+     <properties>
+         <skipTests>true</skipTests>
+-        <maven.compiler.source>1.7</maven.compiler.source>
+-        <maven.compiler.target>1.7</maven.compiler.target>
++        <maven.compiler.source>8</maven.compiler.source>
++        <maven.compiler.target>8</maven.compiler.target>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+ 
+-- 
+2.55.0
+
