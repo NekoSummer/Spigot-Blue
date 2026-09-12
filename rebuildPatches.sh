@@ -40,5 +40,5 @@ savePatches() {
 if [ "$clean" == "clean" ]; then
 	rm -rf *-Patches
 fi
-savePatches Bukkit Spigot-API origin/spigot
-savePatches CraftBukkit Spigot-Server origin/patched
+savePatches Bukkit SpigotBlue-API origin/spigot
+savePatches CraftBukkit SpigotBlue-Server origin/patched
