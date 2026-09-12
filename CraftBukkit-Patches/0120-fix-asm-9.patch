@@ -1,0 +1,31 @@
+From 0264bc0039469c89732a47a62571307970d42e72 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 09:57:14 +0800
+Subject: [PATCH] fix-asm-9
+
+
+diff --git a/pom.xml b/pom.xml
+index 310c79c87..f37980dca 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -5,7 +5,7 @@
+     <artifactId>spigot</artifactId>
+     <packaging>jar</packaging>
+     <version>1.13.2-R0.1-SNAPSHOT</version>
+-    <name>Spigot</name>
++    <name>SpigotBlue</name>
+     <url>http://www.spigotmc.org</url>
+ 
+     <properties>
+@@ -50,7 +50,7 @@
+         <dependency>
+             <groupId>org.ow2.asm</groupId>
+             <artifactId>asm</artifactId>
+-            <version>7.1</version>
++            <version>9.1</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-- 
+2.55.0
+

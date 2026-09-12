@@ -1,0 +1,27 @@
+From 5817fe62ff2b91f13ad522bee959ff9b86a52580 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 09:57:48 +0800
+Subject: [PATCH] fix-main-can-j17
+
+
+diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
+index c9668afc6..5d8ebc639 100644
+--- a/src/main/java/org/bukkit/craftbukkit/Main.java
++++ b/src/main/java/org/bukkit/craftbukkit/Main.java
+@@ -155,11 +155,11 @@ public class Main {
+                 return;
+             }
+ 
+-            float javaVersion = Float.parseFloat(System.getProperty("java.class.version"));
++            /*float javaVersion = Float.parseFloat(System.getProperty("java.class.version"));
+             if (javaVersion > 56.0) {
+                 System.err.println("Unsupported Java detected (" + javaVersion + "). Only up to Java 12 is supported.");
+                 return;
+-            }
++            }*/
+ 
+             try {
+                 // This trick bypasses Maven Shade's clever rewriting of our getProperty call when using String literals
+-- 
+2.55.0
+
