@@ -1,0 +1,22 @@
+From 6e4a74be5178fb4459676345b6d8eb0146414ab0 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 14:51:35 +0800
+Subject: [PATCH] fix-asm-2
+
+
+diff --git a/pom.xml b/pom.xml
+index 801acbde..6ad4cdf0 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -113,7 +113,7 @@
+         <dependency>
+             <groupId>org.ow2.asm</groupId>
+             <artifactId>asm-tree</artifactId>
+-            <version>9.1</version>
++            <version>9.10.1</version>
+             <scope>test</scope>
+         </dependency>
+     </dependencies>
+-- 
+2.55.0
+
