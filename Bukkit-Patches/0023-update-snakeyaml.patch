@@ -1,0 +1,22 @@
+From cb9ef47e9ad14e5fa52640ea5837e94aff7a839b Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 10:44:47 +0800
+Subject: [PATCH] update-snakeyaml
+
+
+diff --git a/pom.xml b/pom.xml
+index 6eaa6490..c60660ba 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -87,7 +87,7 @@
+         <dependency>
+             <groupId>org.yaml</groupId>
+             <artifactId>snakeyaml</artifactId>
+-            <version>1.23</version>
++            <version>1.33</version>
+             <scope>compile</scope>
+         </dependency>
+         <!-- annotations -->
+-- 
+2.55.0
+
