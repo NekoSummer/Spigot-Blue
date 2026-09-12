@@ -37,3 +37,12 @@ Spigot-API
 Spigot-Server
 Bukkit
 CraftBukkit
+
+# Test Server Run
+crash-reports/
+logs/
+bukkit.yml
+commands.yml
+eula.txt
+help.yml
+server.properties
