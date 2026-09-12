@@ -1,0 +1,22 @@
+From 5f0e8fc4a093259a009daec9e0038cca58e709dc Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 17:00:01 +0800
+Subject: [PATCH] fix-version
+
+
+diff --git a/src/main/java/org/bukkit/command/defaults/VersionCommand.java b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
+index 3196d10a..025e93f9 100644
+--- a/src/main/java/org/bukkit/command/defaults/VersionCommand.java
++++ b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
+@@ -43,7 +43,7 @@ public class VersionCommand extends BukkitCommand {
+         if (!testPermission(sender)) return true;
+ 
+         if (args.length == 0) {
+-            sender.sendMessage("This server is running " + Bukkit.getName() + " version " + Bukkit.getVersion() + " (Implementing API version " + Bukkit.getBukkitVersion() + ")");
++            sender.sendMessage("This server is running " + ChatColor.AQUA + Bukkit.getName() + ChatColor.RESET + " version " + Bukkit.getVersion() + " (Implementing API version " + Bukkit.getBukkitVersion() + ")");
+             sender.sendMessage("You are running the latest version");
+             // sender.sendMessage(ChatColor.YELLOW + "This is a final build for 1.13.2. Please see https://www.spigotmc.org/go/1.13.2 for details about upgrading.");
+             // sendVersion(sender);
+-- 
+2.55.0
+
