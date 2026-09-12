@@ -1,3 +1,5 @@
+> When downloading the source code with BuildTools, you must include --rev 1.13.2, otherwise the build will fail.
+
 Spigot
 ======
 
