@@ -1,0 +1,58 @@
+From cc3454f5719d5b1e04d77221ad04a9893bc1f76f Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 19:02:19 +0800
+Subject: [PATCH] add-version-codename
+
+
+diff --git a/src/main/java/org/bukkit/Bukkit.java b/src/main/java/org/bukkit/Bukkit.java
+index a3c4b148..c999af56 100644
+--- a/src/main/java/org/bukkit/Bukkit.java
++++ b/src/main/java/org/bukkit/Bukkit.java
+@@ -101,6 +101,11 @@ public final class Bukkit {
+         return server.getName();
+     }
+ 
++    @NotNull
++    public static String getCodename() {
++        return server.getCodename();
++    }
++
+     /**
+      * Gets the version string of this server implementation.
+      *
+diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
+index 2767f4e5..c672aa80 100644
+--- a/src/main/java/org/bukkit/Server.java
++++ b/src/main/java/org/bukkit/Server.java
+@@ -84,6 +84,14 @@ public interface Server extends PluginMessageRecipient {
+     @NotNull
+     public String getName();
+ 
++    /**
++     * Gets the codename of this server implementation.
++     *
++     * @return codename of this server implementation
++     */
++    @NotNull
++    public String getCodename();
++
+     /**
+      * Gets the version string of this server implementation.
+      *
+diff --git a/src/main/java/org/bukkit/command/defaults/VersionCommand.java b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
+index 025e93f9..e31cbcbb 100644
+--- a/src/main/java/org/bukkit/command/defaults/VersionCommand.java
++++ b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
+@@ -43,8 +43,7 @@ public class VersionCommand extends BukkitCommand {
+         if (!testPermission(sender)) return true;
+ 
+         if (args.length == 0) {
+-            sender.sendMessage("This server is running " + ChatColor.AQUA + Bukkit.getName() + ChatColor.RESET + " version " + Bukkit.getVersion() + " (Implementing API version " + Bukkit.getBukkitVersion() + ")");
+-            sender.sendMessage("You are running the latest version");
++            sender.sendMessage("This server is running " + ChatColor.AQUA + Bukkit.getName() + "「" + Bukkit.getCodename() + "」" + ChatColor.RESET + " version " + Bukkit.getVersion() + " (Implementing API version " + Bukkit.getBukkitVersion() + ")");
+             // sender.sendMessage(ChatColor.YELLOW + "This is a final build for 1.13.2. Please see https://www.spigotmc.org/go/1.13.2 for details about upgrading.");
+             // sendVersion(sender);
+         } else {
+-- 
+2.55.0
+
