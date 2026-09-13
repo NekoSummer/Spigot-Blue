@@ -1,0 +1,22 @@
+From 66ee74eebb67348db284997b53d13dbb28adb7d5 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 09:08:39 +0800
+Subject: [PATCH] update-google-guava
+
+
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index 72de40434..43fc8946f 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -1555,7 +1555,7 @@ public abstract class MinecraftServer implements IAsyncTaskHandler, IMojangStati
+             try {
+                 return Futures.immediateFuture(callable.call());
+             } catch (Exception exception) {
+-                return Futures.immediateFailedCheckedFuture(exception);
++                return Futures.immediateFailedFuture(exception);
+             }
+         }
+     }
+-- 
+2.55.0
+
