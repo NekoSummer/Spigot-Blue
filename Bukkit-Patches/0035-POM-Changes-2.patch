@@ -1,0 +1,35 @@
+From 8444bbcc4215e5cc7e9a205a88771d9a9302c942 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 09:17:36 +0800
+Subject: [PATCH] POM-Changes-2
+
+
+diff --git a/pom.xml b/pom.xml
+index b4d9bcc7..cacceef4 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -3,7 +3,6 @@
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+ 
+-    <groupId>org.spigotmc</groupId>
+     <artifactId>spigot-api</artifactId>
+     <version>1.13.2-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -19,6 +18,13 @@
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+ 
++    <parent>
++        <groupId>org.spigotmc</groupId>
++        <artifactId>spigot-parent</artifactId>
++        <version>dev-SNAPSHOT</version>
++        <relativePath>../pom.xml</relativePath>
++    </parent>
++
+     <distributionManagement>
+         <repository>
+             <id>spigotmc-releases</id>
+-- 
+2.55.0
+
