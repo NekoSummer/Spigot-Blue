@@ -1,0 +1,22 @@
+From 74cfbf932632a69cea4f9d267b52484d2f2604e7 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 09:08:39 +0800
+Subject: [PATCH] update-google-guava
+
+
+diff --git a/pom.xml b/pom.xml
+index e368821f..b4d9bcc7 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -67,7 +67,7 @@
+         <dependency>
+             <groupId>com.google.guava</groupId>
+             <artifactId>guava</artifactId>
+-            <version>21.0</version>
++            <version>33.6.0-jre</version>
+             <scope>compile</scope>
+         </dependency>
+         <!-- bundled with Minecraft, should be kept in sync -->
+-- 
+2.55.0
+

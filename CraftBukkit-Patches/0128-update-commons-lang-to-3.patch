@@ -1,0 +1,611 @@
+From 2bafae41b882571dd48222e54c5dfc768791402d Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 10:01:53 +0800
+Subject: [PATCH] update-commons-lang-to-3
+
+
+diff --git a/src/main/java/net/minecraft/server/FoodMetaData.java b/src/main/java/net/minecraft/server/FoodMetaData.java
+index 03dbd21ee..0c0b10aa7 100644
+--- a/src/main/java/net/minecraft/server/FoodMetaData.java
++++ b/src/main/java/net/minecraft/server/FoodMetaData.java
+@@ -13,7 +13,7 @@ public class FoodMetaData {
+ 
+     // CraftBukkit start - added EntityHuman constructor
+     public FoodMetaData(EntityHuman entityhuman) {
+-        org.apache.commons.lang.Validate.notNull(entityhuman);
++        org.apache.commons.lang3.Validate.notNull(entityhuman);
+         this.entityhuman = entityhuman;
+     }
+     // CraftBukkit end
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftEffect.java b/src/main/java/org/bukkit/craftbukkit/CraftEffect.java
+index c6edd7a50..11a40ecc6 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftEffect.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftEffect.java
+@@ -2,7 +2,7 @@ package org.bukkit.craftbukkit;
+ 
+ import net.minecraft.server.Block;
+ import net.minecraft.server.Item;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Effect;
+ import org.bukkit.Material;
+ import org.bukkit.block.BlockFace;
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftIpBanList.java b/src/main/java/org/bukkit/craftbukkit/CraftIpBanList.java
+index 80832f78a..725bc1593 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftIpBanList.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftIpBanList.java
+@@ -8,8 +8,8 @@ import java.util.Set;
+ import net.minecraft.server.IpBanEntry;
+ import net.minecraft.server.IpBanList;
+ import net.minecraft.server.MinecraftServer;
+-import org.apache.commons.lang.StringUtils;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.StringUtils;
++import org.apache.commons.lang3.Validate;
+ 
+ import com.google.common.collect.ImmutableSet;
+ import java.util.logging.Level;
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftProfileBanList.java b/src/main/java/org/bukkit/craftbukkit/CraftProfileBanList.java
+index 84a1f9c86..1aa3c58de 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftProfileBanList.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftProfileBanList.java
+@@ -9,8 +9,8 @@ import net.minecraft.server.GameProfileBanList;
+ import net.minecraft.server.JsonListEntry;
+ import net.minecraft.server.MinecraftServer;
+ 
+-import org.apache.commons.lang.StringUtils;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.StringUtils;
++import org.apache.commons.lang3.Validate;
+ 
+ import com.google.common.collect.ImmutableSet;
+ import com.mojang.authlib.GameProfile;
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+index a9bdf0757..785d3cc47 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+@@ -121,7 +121,7 @@ import org.bukkit.util.permissions.DefaultPermissions;
+ import org.yaml.snakeyaml.Yaml;
+ import org.yaml.snakeyaml.constructor.SafeConstructor;
+ import org.yaml.snakeyaml.error.MarkedYAMLException;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ import com.google.common.base.Charsets;
+ import com.google.common.base.Function;
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftSound.java b/src/main/java/org/bukkit/craftbukkit/CraftSound.java
+index 17fab031b..93ad9f216 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftSound.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftSound.java
+@@ -5,7 +5,7 @@ import net.minecraft.server.IRegistry;
+ import net.minecraft.server.MinecraftKey;
+ import net.minecraft.server.SoundEffect;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Sound;
+ 
+ public enum CraftSound {
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
+index 262c3f910..34227720d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
+@@ -17,7 +17,7 @@ import java.util.function.Predicate;
+ 
+ import net.minecraft.server.*;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.BlockChangeDelegate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.Chunk;
+diff --git a/src/main/java/org/bukkit/craftbukkit/block/CraftBlock.java b/src/main/java/org/bukkit/craftbukkit/block/CraftBlock.java
+index 4b4fdf93f..6bb1b0565 100644
+--- a/src/main/java/org/bukkit/craftbukkit/block/CraftBlock.java
++++ b/src/main/java/org/bukkit/craftbukkit/block/CraftBlock.java
+@@ -8,7 +8,7 @@ import java.util.List;
+ 
+ import net.minecraft.server.*;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Chunk;
+ import org.bukkit.FluidCollisionMode;
+ import org.bukkit.Location;
+diff --git a/src/main/java/org/bukkit/craftbukkit/command/VanillaCommandWrapper.java b/src/main/java/org/bukkit/craftbukkit/command/VanillaCommandWrapper.java
+index 59d82cf64..0365543d5 100644
+--- a/src/main/java/org/bukkit/craftbukkit/command/VanillaCommandWrapper.java
++++ b/src/main/java/org/bukkit/craftbukkit/command/VanillaCommandWrapper.java
+@@ -11,7 +11,7 @@ import net.minecraft.server.CommandListenerWrapper;
+ import net.minecraft.server.DedicatedServer;
+ import net.minecraft.server.EntityMinecartCommandBlock;
+ import net.minecraft.server.MinecraftServer;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.command.BlockCommandSender;
+ import org.bukkit.command.CommandSender;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftAbstractHorse.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftAbstractHorse.java
+index 14d041680..3cee9cf28 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftAbstractHorse.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftAbstractHorse.java
+@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.entity;
+ import java.util.UUID;
+ import net.minecraft.server.EntityHorse;
+ import net.minecraft.server.EntityHorseAbstract;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.inventory.CraftInventoryAbstractHorse;
+ import org.bukkit.entity.AbstractHorse;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftAreaEffectCloud.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftAreaEffectCloud.java
+index 7e9239cf1..e5173c7c6 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftAreaEffectCloud.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftAreaEffectCloud.java
+@@ -6,7 +6,7 @@ import net.minecraft.server.EntityLiving;
+ import net.minecraft.server.MobEffect;
+ import net.minecraft.server.MobEffectList;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.Particle;
+ import org.bukkit.craftbukkit.CraftParticle;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftArrow.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftArrow.java
+index ff92f8584..b2321642e 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftArrow.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftArrow.java
+@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.entity;
+ import com.google.common.base.Preconditions;
+ import net.minecraft.server.EntityArrow;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.block.Block;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.entity.Arrow;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftFireball.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftFireball.java
+index 7703cc726..9ca155ef4 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftFireball.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftFireball.java
+@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.entity;
+ import net.minecraft.server.EntityFireball;
+ import net.minecraft.server.MathHelper;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.entity.EntityType;
+ import org.bukkit.entity.Fireball;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftFishHook.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftFishHook.java
+index 8392b16b3..f6f4f0839 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftFishHook.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftFishHook.java
+@@ -5,7 +5,7 @@ import net.minecraft.server.EntityFishingHook;
+ import net.minecraft.server.EntityHuman;
+ import net.minecraft.server.MathHelper;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.entity.EntityType;
+ import org.bukkit.entity.FishHook;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftHorse.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftHorse.java
+index 98ef44c30..48288ea6b 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftHorse.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftHorse.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.craftbukkit.entity;
+ 
+ import net.minecraft.server.EntityHorse;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.inventory.CraftInventoryHorse;
+ import org.bukkit.entity.EntityType;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftItemFrame.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftItemFrame.java
+index 227a9ffa0..25c75f00d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftItemFrame.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftItemFrame.java
+@@ -7,7 +7,7 @@ import net.minecraft.server.EnumDirection;
+ import net.minecraft.server.ItemStack;
+ import net.minecraft.server.WorldServer;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ import org.bukkit.Rotation;
+ import org.bukkit.block.BlockFace;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftLingeringPotion.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftLingeringPotion.java
+index 2a5482ff8..38d3b2d1f 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftLingeringPotion.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftLingeringPotion.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.craftbukkit.entity;
+ 
+ import net.minecraft.server.EntityPotion;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.inventory.CraftItemStack;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftLivingEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftLivingEntity.java
+index 3a15b47dd..fc7129aff 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftLivingEntity.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftLivingEntity.java
+@@ -35,7 +35,7 @@ import net.minecraft.server.GenericAttributes;
+ import net.minecraft.server.MobEffect;
+ import net.minecraft.server.MobEffectList;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.FluidCollisionMode;
+ import org.bukkit.Location;
+ import org.bukkit.Material;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftOcelot.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftOcelot.java
+index e73c2c9f1..1bc3a88b4 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftOcelot.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftOcelot.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.craftbukkit.entity;
+ 
+ import net.minecraft.server.EntityOcelot;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.entity.EntityType;
+ import org.bukkit.entity.Ocelot;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+index 7f0465ec4..1d34766c3 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+@@ -67,8 +67,8 @@ import net.minecraft.server.Vec3D;
+ import net.minecraft.server.WhiteListEntry;
+ import net.minecraft.server.WorldServer;
+ 
+-import org.apache.commons.lang.Validate;
+-import org.apache.commons.lang.NotImplementedException;
++import org.apache.commons.lang3.Validate;
++import org.apache.commons.lang3.NotImplementedException;
+ import org.bukkit.*;
+ import org.bukkit.Achievement;
+ import org.bukkit.BanList;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftSplashPotion.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftSplashPotion.java
+index 1ef057b86..065160ed2 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftSplashPotion.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftSplashPotion.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.craftbukkit.entity;
+ 
+ import net.minecraft.server.EntityPotion;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.inventory.CraftItemStack;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftThrownPotion.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftThrownPotion.java
+index b19539935..2f9633332 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftThrownPotion.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftThrownPotion.java
+@@ -5,7 +5,7 @@ import net.minecraft.server.EntityPotion;
+ import net.minecraft.server.MobEffect;
+ import net.minecraft.server.PotionUtil;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.inventory.CraftItemStack;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftTippedArrow.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftTippedArrow.java
+index 435203b88..f9e524cd4 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftTippedArrow.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftTippedArrow.java
+@@ -2,7 +2,7 @@ package org.bukkit.craftbukkit.entity;
+ 
+ import java.util.List;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.potion.CraftPotionUtil;
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftVillager.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftVillager.java
+index e21fe51a0..67690ae5d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftVillager.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftVillager.java
+@@ -5,7 +5,7 @@ import java.util.List;
+ import java.util.Map;
+ import javax.annotation.Nullable;
+ import net.minecraft.server.EntityVillager;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.CraftServer;
+ import org.bukkit.craftbukkit.inventory.CraftInventory;
+ import org.bukkit.craftbukkit.inventory.CraftMerchant;
+diff --git a/src/main/java/org/bukkit/craftbukkit/help/CommandAliasHelpTopic.java b/src/main/java/org/bukkit/craftbukkit/help/CommandAliasHelpTopic.java
+index 9f2238c9a..928a2dfd6 100644
+--- a/src/main/java/org/bukkit/craftbukkit/help/CommandAliasHelpTopic.java
++++ b/src/main/java/org/bukkit/craftbukkit/help/CommandAliasHelpTopic.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.craftbukkit.help;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.ChatColor;
+ import org.bukkit.command.CommandSender;
+ import org.bukkit.help.HelpMap;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventory.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventory.java
+index dd7b3d766..47ed71c8d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventory.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventory.java
+@@ -17,7 +17,7 @@ import net.minecraft.server.TileEntityDropper;
+ import net.minecraft.server.TileEntityFurnace;
+ import net.minecraft.server.TileEntityShulkerBox;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.entity.HumanEntity;
+ import org.bukkit.event.inventory.InventoryType;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryCustom.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryCustom.java
+index 6e17b4fd9..6fe040588 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryCustom.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryCustom.java
+@@ -6,7 +6,7 @@ import java.util.List;
+ import net.minecraft.server.ChatComponentText;
+ 
+ import net.minecraft.server.IChatBaseComponent;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.craftbukkit.entity.CraftHumanEntity;
+ import org.bukkit.entity.HumanEntity;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryPlayer.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryPlayer.java
+index 2273f213c..aa8a431ae 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryPlayer.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftInventoryPlayer.java
+@@ -6,7 +6,7 @@ import net.minecraft.server.PacketPlayOutHeldItemSlot;
+ import net.minecraft.server.PacketPlayOutSetSlot;
+ import net.minecraft.server.PlayerInventory;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.entity.CraftPlayer;
+ import org.bukkit.entity.HumanEntity;
+ import org.bukkit.inventory.EntityEquipment;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java
+index 52041caed..0eb4bdede 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java
+@@ -2,7 +2,7 @@ package org.bukkit.craftbukkit.inventory;
+ 
+ import java.util.Collection;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.Material;
+ import org.bukkit.configuration.serialization.ConfigurationSerialization;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemStack.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemStack.java
+index 2ef4ac64b..ff74470a0 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemStack.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemStack.java
+@@ -11,7 +11,7 @@ import net.minecraft.server.Item;
+ import net.minecraft.server.NBTTagCompound;
+ import net.minecraft.server.NBTTagList;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.configuration.serialization.DelegateDeserialization;
+ import org.bukkit.craftbukkit.util.CraftMagicNumbers;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMerchantCustom.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMerchantCustom.java
+index 4f8edbe3b..8bbf3824e 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMerchantCustom.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMerchantCustom.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.craftbukkit.inventory;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import net.minecraft.server.BlockPosition;
+ import net.minecraft.server.ChatComponentText;
+ import net.minecraft.server.EntityHuman;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBlockState.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBlockState.java
+index f96f6af03..718dc5603 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBlockState.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBlockState.java
+@@ -27,7 +27,7 @@ import net.minecraft.server.TileEntityShulkerBox;
+ import net.minecraft.server.TileEntitySign;
+ import net.minecraft.server.TileEntitySkull;
+ import net.minecraft.server.TileEntityStructure;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.block.BlockState;
+ import org.bukkit.configuration.serialization.DelegateDeserialization;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBook.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBook.java
+index a23ec1461..0c0d32528 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBook.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaBook.java
+@@ -7,7 +7,7 @@ import java.util.Map;
+ import net.minecraft.server.NBTTagCompound;
+ import net.minecraft.server.NBTTagList;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.configuration.serialization.DelegateDeserialization;
+ import org.bukkit.craftbukkit.inventory.CraftMetaItem.SerializableMeta;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaFirework.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaFirework.java
+index b82e2fdf7..684b35c36 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaFirework.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaFirework.java
+@@ -8,7 +8,7 @@ import java.util.Map;
+ import net.minecraft.server.NBTTagCompound;
+ import net.minecraft.server.NBTTagList;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.FireworkEffect;
+ import org.bukkit.FireworkEffect.Type;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
+index ef6437f38..46e820f3a 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
+@@ -29,7 +29,7 @@ import net.minecraft.server.NBTTagCompound;
+ import net.minecraft.server.NBTTagList;
+ import net.minecraft.server.NBTTagString;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.apache.commons.lang3.EnumUtils;
+ import org.bukkit.Material;
+ import org.bukkit.attribute.Attribute;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaPotion.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaPotion.java
+index 29fbdcc83..a46437292 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaPotion.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaPotion.java
+@@ -9,7 +9,7 @@ import net.minecraft.server.NBTTagCompound;
+ import net.minecraft.server.NBTTagInt;
+ import net.minecraft.server.NBTTagList;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.Material;
+ import org.bukkit.configuration.serialization.DelegateDeserialization;
+diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/tags/CraftCustomItemTagContainer.java b/src/main/java/org/bukkit/craftbukkit/inventory/tags/CraftCustomItemTagContainer.java
+index fe663bbae..8e3c77abb 100644
+--- a/src/main/java/org/bukkit/craftbukkit/inventory/tags/CraftCustomItemTagContainer.java
++++ b/src/main/java/org/bukkit/craftbukkit/inventory/tags/CraftCustomItemTagContainer.java
+@@ -6,7 +6,7 @@ import java.util.Map.Entry;
+ import java.util.Objects;
+ import net.minecraft.server.NBTBase;
+ import net.minecraft.server.NBTTagCompound;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.NamespacedKey;
+ import org.bukkit.craftbukkit.inventory.CraftCustomTagTypeRegistry;
+ import org.bukkit.craftbukkit.util.CraftNBTTagConfigSerializer;
+diff --git a/src/main/java/org/bukkit/craftbukkit/projectiles/CraftBlockProjectileSource.java b/src/main/java/org/bukkit/craftbukkit/projectiles/CraftBlockProjectileSource.java
+index 744da023d..e31a3f340 100644
+--- a/src/main/java/org/bukkit/craftbukkit/projectiles/CraftBlockProjectileSource.java
++++ b/src/main/java/org/bukkit/craftbukkit/projectiles/CraftBlockProjectileSource.java
+@@ -2,7 +2,7 @@ package org.bukkit.craftbukkit.projectiles;
+ 
+ import java.util.Random;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.block.Block;
+ import org.bukkit.craftbukkit.inventory.CraftItemStack;
+diff --git a/src/main/java/org/bukkit/craftbukkit/scheduler/CraftScheduler.java b/src/main/java/org/bukkit/craftbukkit/scheduler/CraftScheduler.java
+index 646128f16..d8094d77d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/scheduler/CraftScheduler.java
++++ b/src/main/java/org/bukkit/craftbukkit/scheduler/CraftScheduler.java
+@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicReference;
+ import java.util.function.Consumer;
+ import java.util.logging.Level;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.plugin.IllegalPluginAccessException;
+ import org.bukkit.plugin.Plugin;
+ import org.bukkit.scheduler.BukkitRunnable;
+diff --git a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftObjective.java b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftObjective.java
+index dcbbea38a..6be39c813 100644
+--- a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftObjective.java
++++ b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftObjective.java
+@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.scoreboard;
+ import net.minecraft.server.Scoreboard;
+ import net.minecraft.server.ScoreboardObjective;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.OfflinePlayer;
+ import org.bukkit.craftbukkit.util.CraftChatMessage;
+ import org.bukkit.scoreboard.DisplaySlot;
+diff --git a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboard.java b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboard.java
+index 7320f339f..3bad71188 100644
+--- a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboard.java
++++ b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboard.java
+@@ -5,7 +5,7 @@ import net.minecraft.server.Scoreboard;
+ import net.minecraft.server.ScoreboardObjective;
+ import net.minecraft.server.ScoreboardTeam;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.OfflinePlayer;
+ import org.bukkit.scoreboard.DisplaySlot;
+diff --git a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java
+index 9cce899f5..74633133b 100644
+--- a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java
++++ b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java
+@@ -20,7 +20,7 @@ import net.minecraft.server.ScoreboardScore;
+ import net.minecraft.server.ScoreboardServer;
+ import net.minecraft.server.ScoreboardTeam;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.craftbukkit.entity.CraftPlayer;
+ import org.bukkit.craftbukkit.util.WeakCollection;
+ import org.bukkit.entity.Player;
+diff --git a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftTeam.java b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftTeam.java
+index 4154b754e..f3e7aa715 100644
+--- a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftTeam.java
++++ b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftTeam.java
+@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.scoreboard;
+ import java.util.Set;
+ 
+ import net.minecraft.server.ScoreboardTeamBase.EnumNameTagVisibility;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.OfflinePlayer;
+ import org.bukkit.scoreboard.NameTagVisibility;
+diff --git a/src/main/java/org/bukkit/craftbukkit/util/AsynchronousExecutor.java b/src/main/java/org/bukkit/craftbukkit/util/AsynchronousExecutor.java
+index 193c3621c..5e820450d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/util/AsynchronousExecutor.java
++++ b/src/main/java/org/bukkit/craftbukkit/util/AsynchronousExecutor.java
+@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
+ import java.util.concurrent.TimeUnit;
+ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ /**
+  * Executes tasks using a multi-stage process executor. Synchronous executions are via {@link AsynchronousExecutor#finishActive()} or the {@link AsynchronousExecutor#get(Object)} methods.
+diff --git a/src/main/java/org/bukkit/craftbukkit/util/WeakCollection.java b/src/main/java/org/bukkit/craftbukkit/util/WeakCollection.java
+index 7e7363f52..1b781ba8c 100644
+--- a/src/main/java/org/bukkit/craftbukkit/util/WeakCollection.java
++++ b/src/main/java/org/bukkit/craftbukkit/util/WeakCollection.java
+@@ -6,7 +6,7 @@ import java.util.Collection;
+ import java.util.Iterator;
+ import java.util.NoSuchElementException;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ public final class WeakCollection<T> implements Collection<T> {
+     static final Object NO_VALUE = new Object();
+diff --git a/src/test/java/org/bukkit/craftbukkit/inventory/FactoryItemMaterialTest.java b/src/test/java/org/bukkit/craftbukkit/inventory/FactoryItemMaterialTest.java
+index 1e5c3ef2d..7b90e75a0 100644
+--- a/src/test/java/org/bukkit/craftbukkit/inventory/FactoryItemMaterialTest.java
++++ b/src/test/java/org/bukkit/craftbukkit/inventory/FactoryItemMaterialTest.java
+@@ -5,7 +5,7 @@ import static org.hamcrest.Matchers.*;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
+-import org.apache.commons.lang.ArrayUtils;
++import org.apache.commons.lang3.ArrayUtils;
+ 
+ import org.bukkit.Material;
+ import org.bukkit.inventory.ItemFactory;
+-- 
+2.55.0
+

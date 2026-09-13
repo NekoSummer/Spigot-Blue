@@ -1,0 +1,22 @@
+From a6281b2b649d598a713d15e8033327d383fd7809 Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 08:32:49 +0800
+Subject: [PATCH] update-some-depends
+
+
+diff --git a/pom.xml b/pom.xml
+index e368821f..cb3705fa 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -67,7 +67,7 @@
+         <dependency>
+             <groupId>com.google.guava</groupId>
+             <artifactId>guava</artifactId>
+-            <version>21.0</version>
++            <version>28.2-jre</version>
+             <scope>compile</scope>
+         </dependency>
+         <!-- bundled with Minecraft, should be kept in sync -->
+-- 
+2.55.0
+

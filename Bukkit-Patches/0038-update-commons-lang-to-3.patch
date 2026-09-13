@@ -1,0 +1,775 @@
+From 12a9dc035da3c157498445ee2483e20695178a1e Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 10:01:53 +0800
+Subject: [PATCH] update-commons-lang-to-3
+
+
+diff --git a/pom.xml b/pom.xml
+index cacceef4..1bc34665 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -58,9 +58,9 @@
+ 
+     <dependencies>
+         <dependency>
+-            <groupId>commons-lang</groupId>
+-            <artifactId>commons-lang</artifactId>
+-            <version>2.6</version>
++            <groupId>org.apache.commons</groupId>
++            <artifactId>commons-lang3</artifactId>
++            <version>3.19.0</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+diff --git a/src/main/java/org/bukkit/Art.java b/src/main/java/org/bukkit/Art.java
+index cfbcaf72..c812271e 100644
+--- a/src/main/java/org/bukkit/Art.java
++++ b/src/main/java/org/bukkit/Art.java
+@@ -2,7 +2,7 @@ package org.bukkit;
+ 
+ import java.util.HashMap;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ import com.google.common.collect.Maps;
+ import org.jetbrains.annotations.NotNull;
+diff --git a/src/main/java/org/bukkit/ChatColor.java b/src/main/java/org/bukkit/ChatColor.java
+index 3ab8e941..1c178f42 100644
+--- a/src/main/java/org/bukkit/ChatColor.java
++++ b/src/main/java/org/bukkit/ChatColor.java
+@@ -3,7 +3,7 @@ package org.bukkit;
+ import java.util.Map;
+ import java.util.regex.Pattern;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ import com.google.common.collect.Maps;
+ import org.jetbrains.annotations.Contract;
+diff --git a/src/main/java/org/bukkit/Color.java b/src/main/java/org/bukkit/Color.java
+index fbad4590..48e87296 100644
+--- a/src/main/java/org/bukkit/Color.java
++++ b/src/main/java/org/bukkit/Color.java
+@@ -2,7 +2,7 @@ package org.bukkit;
+ 
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.configuration.serialization.ConfigurationSerializable;
+ import org.bukkit.configuration.serialization.SerializableAs;
+ 
+diff --git a/src/main/java/org/bukkit/FireworkEffect.java b/src/main/java/org/bukkit/FireworkEffect.java
+index 524dc998..76d8b4f6 100644
+--- a/src/main/java/org/bukkit/FireworkEffect.java
++++ b/src/main/java/org/bukkit/FireworkEffect.java
+@@ -3,7 +3,7 @@ package org.bukkit;
+ import java.util.List;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.configuration.serialization.ConfigurationSerializable;
+ import org.bukkit.configuration.serialization.SerializableAs;
+ 
+diff --git a/src/main/java/org/bukkit/Material.java b/src/main/java/org/bukkit/Material.java
+index 6120955b..8e006812 100644
+--- a/src/main/java/org/bukkit/Material.java
++++ b/src/main/java/org/bukkit/Material.java
+@@ -5,7 +5,7 @@ import java.lang.reflect.Constructor;
+ import java.util.Locale;
+ import java.util.Map;
+ import java.util.function.Consumer;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.block.data.Ageable;
+ import org.bukkit.block.data.AnaloguePowerable;
+ import org.bukkit.block.data.Bisected;
+diff --git a/src/main/java/org/bukkit/Note.java b/src/main/java/org/bukkit/Note.java
+index 6aa02542..20f5bb08 100644
+--- a/src/main/java/org/bukkit/Note.java
++++ b/src/main/java/org/bukkit/Note.java
+@@ -2,7 +2,7 @@ package org.bukkit;
+ 
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ import com.google.common.collect.Maps;
+ import org.jetbrains.annotations.NotNull;
+diff --git a/src/main/java/org/bukkit/StructureType.java b/src/main/java/org/bukkit/StructureType.java
+index 02d79545..8bb9fb82 100644
+--- a/src/main/java/org/bukkit/StructureType.java
++++ b/src/main/java/org/bukkit/StructureType.java
+@@ -2,7 +2,7 @@ package org.bukkit;
+ 
+ import com.google.common.base.Preconditions;
+ import com.google.common.collect.ImmutableMap;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.map.MapCursor;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+diff --git a/src/main/java/org/bukkit/attribute/AttributeModifier.java b/src/main/java/org/bukkit/attribute/AttributeModifier.java
+index a9763147..84aeafde 100644
+--- a/src/main/java/org/bukkit/attribute/AttributeModifier.java
++++ b/src/main/java/org/bukkit/attribute/AttributeModifier.java
+@@ -4,7 +4,7 @@ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Objects;
+ import java.util.UUID;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.configuration.serialization.ConfigurationSerializable;
+ import org.bukkit.inventory.EquipmentSlot;
+ import org.bukkit.util.NumberConversions;
+diff --git a/src/main/java/org/bukkit/command/Command.java b/src/main/java/org/bukkit/command/Command.java
+index dafc4ed9..7f12483e 100644
+--- a/src/main/java/org/bukkit/command/Command.java
++++ b/src/main/java/org/bukkit/command/Command.java
+@@ -5,7 +5,7 @@ import java.util.Collections;
+ import java.util.List;
+ import java.util.Set;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.ChatColor;
+ import org.bukkit.GameRule;
+diff --git a/src/main/java/org/bukkit/command/PluginCommand.java b/src/main/java/org/bukkit/command/PluginCommand.java
+index 92c23424..ba88964e 100644
+--- a/src/main/java/org/bukkit/command/PluginCommand.java
++++ b/src/main/java/org/bukkit/command/PluginCommand.java
+@@ -2,7 +2,7 @@ package org.bukkit.command;
+ 
+ import java.util.List;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.plugin.Plugin;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+diff --git a/src/main/java/org/bukkit/command/SimpleCommandMap.java b/src/main/java/org/bukkit/command/SimpleCommandMap.java
+index 1586f648..5c3119ad 100644
+--- a/src/main/java/org/bukkit/command/SimpleCommandMap.java
++++ b/src/main/java/org/bukkit/command/SimpleCommandMap.java
+@@ -9,7 +9,7 @@ import java.util.Iterator;
+ import java.util.List;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.Server;
+ import org.bukkit.command.defaults.*;
+diff --git a/src/main/java/org/bukkit/command/defaults/HelpCommand.java b/src/main/java/org/bukkit/command/defaults/HelpCommand.java
+index 391283bd..9b814596 100644
+--- a/src/main/java/org/bukkit/command/defaults/HelpCommand.java
++++ b/src/main/java/org/bukkit/command/defaults/HelpCommand.java
+@@ -8,10 +8,10 @@ import java.util.Map;
+ import java.util.Set;
+ import java.util.TreeSet;
+ 
+-import org.apache.commons.lang.ArrayUtils;
+-import org.apache.commons.lang.StringUtils;
+-import org.apache.commons.lang.Validate;
+-import org.apache.commons.lang.math.NumberUtils;
++import org.apache.commons.lang3.ArrayUtils;
++import org.apache.commons.lang3.StringUtils;
++import org.apache.commons.lang3.Validate;
++import org.apache.commons.lang3.math.NumberUtils;
+ import org.bukkit.Bukkit;
+ import org.bukkit.ChatColor;
+ import org.bukkit.command.CommandSender;
+diff --git a/src/main/java/org/bukkit/command/defaults/TimingsCommand.java b/src/main/java/org/bukkit/command/defaults/TimingsCommand.java
+index 1e6e7033..f21bba38 100644
+--- a/src/main/java/org/bukkit/command/defaults/TimingsCommand.java
++++ b/src/main/java/org/bukkit/command/defaults/TimingsCommand.java
+@@ -6,7 +6,7 @@ import java.io.PrintStream;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.ChatColor;
+ import org.bukkit.command.CommandSender;
+diff --git a/src/main/java/org/bukkit/command/defaults/VersionCommand.java b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
+index e31cbcbb..a20f877b 100644
+--- a/src/main/java/org/bukkit/command/defaults/VersionCommand.java
++++ b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
+@@ -5,7 +5,7 @@ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.List;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.ChatColor;
+ import org.bukkit.command.CommandSender;
+diff --git a/src/main/java/org/bukkit/configuration/MemoryConfiguration.java b/src/main/java/org/bukkit/configuration/MemoryConfiguration.java
+index e03108b1..a5088bd6 100644
+--- a/src/main/java/org/bukkit/configuration/MemoryConfiguration.java
++++ b/src/main/java/org/bukkit/configuration/MemoryConfiguration.java
+@@ -2,7 +2,7 @@ package org.bukkit.configuration;
+ 
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+ 
+diff --git a/src/main/java/org/bukkit/configuration/MemorySection.java b/src/main/java/org/bukkit/configuration/MemorySection.java
+index 37bb1c67..28f06080 100644
+--- a/src/main/java/org/bukkit/configuration/MemorySection.java
++++ b/src/main/java/org/bukkit/configuration/MemorySection.java
+@@ -9,7 +9,7 @@ import java.util.List;
+ import java.util.Map;
+ import java.util.Set;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.OfflinePlayer;
+ import org.bukkit.configuration.serialization.ConfigurationSerializable;
+diff --git a/src/main/java/org/bukkit/configuration/file/FileConfiguration.java b/src/main/java/org/bukkit/configuration/file/FileConfiguration.java
+index ba3c93fe..48ce1464 100644
+--- a/src/main/java/org/bukkit/configuration/file/FileConfiguration.java
++++ b/src/main/java/org/bukkit/configuration/file/FileConfiguration.java
+@@ -3,7 +3,7 @@ package org.bukkit.configuration.file;
+ import com.google.common.base.Charsets;
+ import com.google.common.io.Files;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.configuration.InvalidConfigurationException;
+ 
+ import java.io.BufferedReader;
+diff --git a/src/main/java/org/bukkit/configuration/file/YamlConfiguration.java b/src/main/java/org/bukkit/configuration/file/YamlConfiguration.java
+index 441e7ff9..ece2edf8 100644
+--- a/src/main/java/org/bukkit/configuration/file/YamlConfiguration.java
++++ b/src/main/java/org/bukkit/configuration/file/YamlConfiguration.java
+@@ -7,7 +7,7 @@ import java.io.Reader;
+ import java.util.Map;
+ import java.util.logging.Level;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.configuration.Configuration;
+ import org.bukkit.configuration.ConfigurationSection;
+diff --git a/src/main/java/org/bukkit/configuration/file/YamlConfigurationOptions.java b/src/main/java/org/bukkit/configuration/file/YamlConfigurationOptions.java
+index b2bf9785..1efab353 100644
+--- a/src/main/java/org/bukkit/configuration/file/YamlConfigurationOptions.java
++++ b/src/main/java/org/bukkit/configuration/file/YamlConfigurationOptions.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.configuration.file;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+ 
+diff --git a/src/main/java/org/bukkit/configuration/serialization/ConfigurationSerialization.java b/src/main/java/org/bukkit/configuration/serialization/ConfigurationSerialization.java
+index 76d9b966..6a5f3d6f 100644
+--- a/src/main/java/org/bukkit/configuration/serialization/ConfigurationSerialization.java
++++ b/src/main/java/org/bukkit/configuration/serialization/ConfigurationSerialization.java
+@@ -9,7 +9,7 @@ import java.util.Map;
+ import java.util.logging.Level;
+ import java.util.logging.Logger;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.FireworkEffect;
+ import org.bukkit.Location;
+diff --git a/src/main/java/org/bukkit/conversations/BooleanPrompt.java b/src/main/java/org/bukkit/conversations/BooleanPrompt.java
+index 95d05443..91b08ac7 100644
+--- a/src/main/java/org/bukkit/conversations/BooleanPrompt.java
++++ b/src/main/java/org/bukkit/conversations/BooleanPrompt.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.conversations;
+ 
+-import org.apache.commons.lang.ArrayUtils;
+-import org.apache.commons.lang.BooleanUtils;
++import org.apache.commons.lang3.ArrayUtils;
++import org.apache.commons.lang3.BooleanUtils;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+ 
+diff --git a/src/main/java/org/bukkit/conversations/FixedSetPrompt.java b/src/main/java/org/bukkit/conversations/FixedSetPrompt.java
+index a1dd1028..d28be1d3 100644
+--- a/src/main/java/org/bukkit/conversations/FixedSetPrompt.java
++++ b/src/main/java/org/bukkit/conversations/FixedSetPrompt.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.conversations;
+ 
+-import org.apache.commons.lang.StringUtils;
++import org.apache.commons.lang3.StringUtils;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+ 
+diff --git a/src/main/java/org/bukkit/conversations/NumericPrompt.java b/src/main/java/org/bukkit/conversations/NumericPrompt.java
+index 5da28a3b..67134fa3 100644
+--- a/src/main/java/org/bukkit/conversations/NumericPrompt.java
++++ b/src/main/java/org/bukkit/conversations/NumericPrompt.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.conversations;
+ 
+-import org.apache.commons.lang.math.NumberUtils;
++import org.apache.commons.lang3.math.NumberUtils;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+ 
+diff --git a/src/main/java/org/bukkit/enchantments/EnchantmentOffer.java b/src/main/java/org/bukkit/enchantments/EnchantmentOffer.java
+index a830610d..d0b4c52d 100644
+--- a/src/main/java/org/bukkit/enchantments/EnchantmentOffer.java
++++ b/src/main/java/org/bukkit/enchantments/EnchantmentOffer.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.enchantments;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.jetbrains.annotations.NotNull;
+ 
+ /**
+diff --git a/src/main/java/org/bukkit/event/entity/EnderDragonChangePhaseEvent.java b/src/main/java/org/bukkit/event/entity/EnderDragonChangePhaseEvent.java
+index 1b654fa9..a23a7585 100644
+--- a/src/main/java/org/bukkit/event/entity/EnderDragonChangePhaseEvent.java
++++ b/src/main/java/org/bukkit/event/entity/EnderDragonChangePhaseEvent.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.event.entity;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.entity.EnderDragon;
+ import org.bukkit.event.Cancellable;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/entity/EntityBreedEvent.java b/src/main/java/org/bukkit/event/entity/EntityBreedEvent.java
+index ded0693f..3abcd75c 100644
+--- a/src/main/java/org/bukkit/event/entity/EntityBreedEvent.java
++++ b/src/main/java/org/bukkit/event/entity/EntityBreedEvent.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.event.entity;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.entity.LivingEntity;
+ import org.bukkit.event.Cancellable;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/entity/EntityDamageEvent.java b/src/main/java/org/bukkit/event/entity/EntityDamageEvent.java
+index 477ecfbc..e79edc86 100644
+--- a/src/main/java/org/bukkit/event/entity/EntityDamageEvent.java
++++ b/src/main/java/org/bukkit/event/entity/EntityDamageEvent.java
+@@ -3,7 +3,7 @@ package org.bukkit.event.entity;
+ import java.util.EnumMap;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.entity.Entity;
+ import org.bukkit.entity.Player;
+diff --git a/src/main/java/org/bukkit/event/entity/PotionSplashEvent.java b/src/main/java/org/bukkit/event/entity/PotionSplashEvent.java
+index 45d224ec..0c42a6d3 100644
+--- a/src/main/java/org/bukkit/event/entity/PotionSplashEvent.java
++++ b/src/main/java/org/bukkit/event/entity/PotionSplashEvent.java
+@@ -4,7 +4,7 @@ import java.util.ArrayList;
+ import java.util.Collection;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.entity.LivingEntity;
+ import org.bukkit.entity.ThrownPotion;
+ import org.bukkit.event.Cancellable;
+diff --git a/src/main/java/org/bukkit/event/inventory/InventoryDragEvent.java b/src/main/java/org/bukkit/event/inventory/InventoryDragEvent.java
+index 1716369a..c9422195 100644
+--- a/src/main/java/org/bukkit/event/inventory/InventoryDragEvent.java
++++ b/src/main/java/org/bukkit/event/inventory/InventoryDragEvent.java
+@@ -4,7 +4,7 @@ import java.util.Collections;
+ import java.util.Map;
+ import java.util.Set;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.entity.HumanEntity;
+ import org.bukkit.entity.Player;
+diff --git a/src/main/java/org/bukkit/event/inventory/InventoryMoveItemEvent.java b/src/main/java/org/bukkit/event/inventory/InventoryMoveItemEvent.java
+index 2bb57d23..6cef5498 100644
+--- a/src/main/java/org/bukkit/event/inventory/InventoryMoveItemEvent.java
++++ b/src/main/java/org/bukkit/event/inventory/InventoryMoveItemEvent.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.event.inventory;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.event.Cancellable;
+ import org.bukkit.event.Event;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/player/PlayerChatEvent.java b/src/main/java/org/bukkit/event/player/PlayerChatEvent.java
+index fec303c9..cd2d32ed 100644
+--- a/src/main/java/org/bukkit/event/player/PlayerChatEvent.java
++++ b/src/main/java/org/bukkit/event/player/PlayerChatEvent.java
+@@ -3,7 +3,7 @@ package org.bukkit.event.player;
+ import java.util.HashSet;
+ import java.util.Set;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Warning;
+ import org.bukkit.entity.Player;
+ import org.bukkit.event.Cancellable;
+diff --git a/src/main/java/org/bukkit/event/player/PlayerChatTabCompleteEvent.java b/src/main/java/org/bukkit/event/player/PlayerChatTabCompleteEvent.java
+index c3ac3792..d580bb42 100644
+--- a/src/main/java/org/bukkit/event/player/PlayerChatTabCompleteEvent.java
++++ b/src/main/java/org/bukkit/event/player/PlayerChatTabCompleteEvent.java
+@@ -2,7 +2,7 @@ package org.bukkit.event.player;
+ 
+ import java.util.Collection;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Warning;
+ import org.bukkit.entity.Player;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/player/PlayerCommandPreprocessEvent.java b/src/main/java/org/bukkit/event/player/PlayerCommandPreprocessEvent.java
+index 66c930da..6319412f 100644
+--- a/src/main/java/org/bukkit/event/player/PlayerCommandPreprocessEvent.java
++++ b/src/main/java/org/bukkit/event/player/PlayerCommandPreprocessEvent.java
+@@ -3,7 +3,7 @@ package org.bukkit.event.player;
+ import java.util.HashSet;
+ import java.util.Set;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.entity.Player;
+ import org.bukkit.event.Cancellable;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/player/PlayerEditBookEvent.java b/src/main/java/org/bukkit/event/player/PlayerEditBookEvent.java
+index 44e62e61..e315ad0d 100644
+--- a/src/main/java/org/bukkit/event/player/PlayerEditBookEvent.java
++++ b/src/main/java/org/bukkit/event/player/PlayerEditBookEvent.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.event.player;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.entity.Player;
+ import org.bukkit.event.Cancellable;
+diff --git a/src/main/java/org/bukkit/event/player/PlayerRespawnEvent.java b/src/main/java/org/bukkit/event/player/PlayerRespawnEvent.java
+index 71b566e4..a3559540 100644
+--- a/src/main/java/org/bukkit/event/player/PlayerRespawnEvent.java
++++ b/src/main/java/org/bukkit/event/player/PlayerRespawnEvent.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.event.player;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.entity.Player;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/server/ServerListPingEvent.java b/src/main/java/org/bukkit/event/server/ServerListPingEvent.java
+index d873763d..f5ec34be 100644
+--- a/src/main/java/org/bukkit/event/server/ServerListPingEvent.java
++++ b/src/main/java/org/bukkit/event/server/ServerListPingEvent.java
+@@ -3,7 +3,7 @@ package org.bukkit.event.server;
+ import java.net.InetAddress;
+ import java.util.Iterator;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.UndefinedNullability;
+ import org.bukkit.entity.Player;
+ import org.bukkit.event.HandlerList;
+diff --git a/src/main/java/org/bukkit/event/server/TabCompleteEvent.java b/src/main/java/org/bukkit/event/server/TabCompleteEvent.java
+index d1a9956a..8f196623 100644
+--- a/src/main/java/org/bukkit/event/server/TabCompleteEvent.java
++++ b/src/main/java/org/bukkit/event/server/TabCompleteEvent.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.event.server;
+ 
+ import java.util.List;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.command.CommandSender;
+ import org.bukkit.event.Cancellable;
+ import org.bukkit.event.Event;
+diff --git a/src/main/java/org/bukkit/help/GenericCommandHelpTopic.java b/src/main/java/org/bukkit/help/GenericCommandHelpTopic.java
+index b05f570a..c36c4a6a 100644
+--- a/src/main/java/org/bukkit/help/GenericCommandHelpTopic.java
++++ b/src/main/java/org/bukkit/help/GenericCommandHelpTopic.java
+@@ -3,7 +3,7 @@ package org.bukkit.help;
+ import org.bukkit.ChatColor;
+ import org.bukkit.command.Command;
+ import org.bukkit.command.CommandSender;
+-import org.apache.commons.lang.StringUtils;
++import org.apache.commons.lang3.StringUtils;
+ import org.bukkit.command.ConsoleCommandSender;
+ import org.jetbrains.annotations.NotNull;
+ 
+diff --git a/src/main/java/org/bukkit/inventory/ItemStack.java b/src/main/java/org/bukkit/inventory/ItemStack.java
+index 7b709457..324b5aa6 100644
+--- a/src/main/java/org/bukkit/inventory/ItemStack.java
++++ b/src/main/java/org/bukkit/inventory/ItemStack.java
+@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
+ import java.util.LinkedHashMap;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.Material;
+ import org.bukkit.Utility;
+diff --git a/src/main/java/org/bukkit/inventory/ShapedRecipe.java b/src/main/java/org/bukkit/inventory/ShapedRecipe.java
+index 77e6ccf5..d192cd2a 100644
+--- a/src/main/java/org/bukkit/inventory/ShapedRecipe.java
++++ b/src/main/java/org/bukkit/inventory/ShapedRecipe.java
+@@ -5,7 +5,7 @@ import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ 
+ import org.bukkit.Keyed;
+ import org.bukkit.Material;
+diff --git a/src/main/java/org/bukkit/inventory/ShapelessRecipe.java b/src/main/java/org/bukkit/inventory/ShapelessRecipe.java
+index a8d5f330..54e0efe7 100644
+--- a/src/main/java/org/bukkit/inventory/ShapelessRecipe.java
++++ b/src/main/java/org/bukkit/inventory/ShapelessRecipe.java
+@@ -6,7 +6,7 @@ import java.util.Collections;
+ import java.util.Iterator;
+ import java.util.List;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Keyed;
+ 
+ import org.bukkit.Material;
+diff --git a/src/main/java/org/bukkit/loot/LootContext.java b/src/main/java/org/bukkit/loot/LootContext.java
+index e307f9fc..40d71c7f 100644
+--- a/src/main/java/org/bukkit/loot/LootContext.java
++++ b/src/main/java/org/bukkit/loot/LootContext.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.loot;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.entity.Entity;
+ import org.bukkit.entity.HumanEntity;
+diff --git a/src/main/java/org/bukkit/material/Mushroom.java b/src/main/java/org/bukkit/material/Mushroom.java
+index cbc7d9bf..5e4a26c6 100644
+--- a/src/main/java/org/bukkit/material/Mushroom.java
++++ b/src/main/java/org/bukkit/material/Mushroom.java
+@@ -3,7 +3,7 @@ package org.bukkit.material;
+ import java.util.EnumSet;
+ import java.util.Set;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.block.BlockFace;
+ import org.bukkit.material.types.MushroomBlockTexture;
+diff --git a/src/main/java/org/bukkit/metadata/LazyMetadataValue.java b/src/main/java/org/bukkit/metadata/LazyMetadataValue.java
+index 820b22ca..991cd415 100644
+--- a/src/main/java/org/bukkit/metadata/LazyMetadataValue.java
++++ b/src/main/java/org/bukkit/metadata/LazyMetadataValue.java
+@@ -3,7 +3,7 @@ package org.bukkit.metadata;
+ import java.lang.ref.SoftReference;
+ import java.util.concurrent.Callable;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.plugin.Plugin;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+diff --git a/src/main/java/org/bukkit/metadata/MetadataStoreBase.java b/src/main/java/org/bukkit/metadata/MetadataStoreBase.java
+index 9dbc32d8..1ec970ed 100644
+--- a/src/main/java/org/bukkit/metadata/MetadataStoreBase.java
++++ b/src/main/java/org/bukkit/metadata/MetadataStoreBase.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.metadata;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.plugin.Plugin;
+ import org.jetbrains.annotations.NotNull;
+ 
+diff --git a/src/main/java/org/bukkit/metadata/MetadataValueAdapter.java b/src/main/java/org/bukkit/metadata/MetadataValueAdapter.java
+index f8829910..8f72859e 100644
+--- a/src/main/java/org/bukkit/metadata/MetadataValueAdapter.java
++++ b/src/main/java/org/bukkit/metadata/MetadataValueAdapter.java
+@@ -2,7 +2,7 @@ package org.bukkit.metadata;
+ 
+ import java.lang.ref.WeakReference;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.plugin.Plugin;
+ import org.bukkit.util.NumberConversions;
+ import org.jetbrains.annotations.NotNull;
+diff --git a/src/main/java/org/bukkit/permissions/Permission.java b/src/main/java/org/bukkit/permissions/Permission.java
+index 09eb28cc..81428416 100644
+--- a/src/main/java/org/bukkit/permissions/Permission.java
++++ b/src/main/java/org/bukkit/permissions/Permission.java
+@@ -7,7 +7,7 @@ import java.util.Map;
+ import java.util.Set;
+ import java.util.logging.Level;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Bukkit;
+ import org.bukkit.plugin.PluginManager;
+ import org.jetbrains.annotations.NotNull;
+diff --git a/src/main/java/org/bukkit/plugin/SimplePluginManager.java b/src/main/java/org/bukkit/plugin/SimplePluginManager.java
+index 76137a80..485df5a2 100644
+--- a/src/main/java/org/bukkit/plugin/SimplePluginManager.java
++++ b/src/main/java/org/bukkit/plugin/SimplePluginManager.java
+@@ -19,7 +19,7 @@ import java.util.logging.Level;
+ import java.util.regex.Matcher;
+ import java.util.regex.Pattern;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Server;
+ import org.bukkit.command.Command;
+ import org.bukkit.command.PluginCommandYamlParser;
+diff --git a/src/main/java/org/bukkit/plugin/java/JavaPlugin.java b/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
+index 7c934899..4c8988ef 100644
+--- a/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
++++ b/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
+@@ -13,7 +13,7 @@ import java.util.List;
+ import java.util.logging.Level;
+ import java.util.logging.Logger;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Server;
+ import org.bukkit.command.Command;
+ import org.bukkit.command.CommandSender;
+diff --git a/src/main/java/org/bukkit/plugin/java/JavaPluginLoader.java b/src/main/java/org/bukkit/plugin/java/JavaPluginLoader.java
+index 56f93336..17301c3d 100644
+--- a/src/main/java/org/bukkit/plugin/java/JavaPluginLoader.java
++++ b/src/main/java/org/bukkit/plugin/java/JavaPluginLoader.java
+@@ -19,7 +19,7 @@ import java.util.jar.JarFile;
+ import java.util.logging.Level;
+ import java.util.regex.Pattern;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Server;
+ import org.bukkit.Warning;
+ import org.bukkit.Warning.WarningState;
+diff --git a/src/main/java/org/bukkit/plugin/java/PluginClassLoader.java b/src/main/java/org/bukkit/plugin/java/PluginClassLoader.java
+index 541d8ee6..579df953 100644
+--- a/src/main/java/org/bukkit/plugin/java/PluginClassLoader.java
++++ b/src/main/java/org/bukkit/plugin/java/PluginClassLoader.java
+@@ -16,7 +16,7 @@ import java.util.jar.JarEntry;
+ import java.util.jar.JarFile;
+ import java.util.jar.Manifest;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.plugin.InvalidPluginException;
+ import org.bukkit.plugin.PluginDescriptionFile;
+ import org.jetbrains.annotations.NotNull;
+diff --git a/src/main/java/org/bukkit/potion/Potion.java b/src/main/java/org/bukkit/potion/Potion.java
+index 63b7c70c..7dd3c4cd 100644
+--- a/src/main/java/org/bukkit/potion/Potion.java
++++ b/src/main/java/org/bukkit/potion/Potion.java
+@@ -2,7 +2,7 @@ package org.bukkit.potion;
+ 
+ import java.util.Collection;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Material;
+ import org.bukkit.entity.LivingEntity;
+ import org.bukkit.inventory.ItemStack;
+diff --git a/src/main/java/org/bukkit/potion/PotionData.java b/src/main/java/org/bukkit/potion/PotionData.java
+index ba0d6711..09bf921a 100644
+--- a/src/main/java/org/bukkit/potion/PotionData.java
++++ b/src/main/java/org/bukkit/potion/PotionData.java
+@@ -1,6 +1,6 @@
+ package org.bukkit.potion;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.jetbrains.annotations.NotNull;
+ 
+ public final class PotionData {
+diff --git a/src/main/java/org/bukkit/potion/PotionEffect.java b/src/main/java/org/bukkit/potion/PotionEffect.java
+index d57450c9..dc8a78b3 100644
+--- a/src/main/java/org/bukkit/potion/PotionEffect.java
++++ b/src/main/java/org/bukkit/potion/PotionEffect.java
+@@ -3,7 +3,7 @@ package org.bukkit.potion;
+ import java.util.Map;
+ import java.util.NoSuchElementException;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.bukkit.configuration.serialization.ConfigurationSerializable;
+ import org.bukkit.configuration.serialization.SerializableAs;
+diff --git a/src/main/java/org/bukkit/potion/PotionEffectType.java b/src/main/java/org/bukkit/potion/PotionEffectType.java
+index 059c77d3..8c4475f1 100644
+--- a/src/main/java/org/bukkit/potion/PotionEffectType.java
++++ b/src/main/java/org/bukkit/potion/PotionEffectType.java
+@@ -4,7 +4,7 @@ import java.util.Arrays;
+ import java.util.HashMap;
+ import java.util.Map;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Color;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+diff --git a/src/main/java/org/bukkit/util/BoundingBox.java b/src/main/java/org/bukkit/util/BoundingBox.java
+index e5c7826a..82a08e70 100644
+--- a/src/main/java/org/bukkit/util/BoundingBox.java
++++ b/src/main/java/org/bukkit/util/BoundingBox.java
+@@ -3,7 +3,7 @@ package org.bukkit.util;
+ import java.util.LinkedHashMap;
+ import java.util.Map;
+ import java.util.Objects;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.Location;
+ import org.bukkit.block.Block;
+ import org.bukkit.block.BlockFace;
+diff --git a/src/main/java/org/bukkit/util/RayTraceResult.java b/src/main/java/org/bukkit/util/RayTraceResult.java
+index 05463019..5f4e59ee 100644
+--- a/src/main/java/org/bukkit/util/RayTraceResult.java
++++ b/src/main/java/org/bukkit/util/RayTraceResult.java
+@@ -2,7 +2,7 @@ package org.bukkit.util;
+ 
+ import java.util.Objects;
+ 
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.bukkit.block.Block;
+ import org.bukkit.block.BlockFace;
+ import org.bukkit.entity.Entity;
+diff --git a/src/main/java/org/bukkit/util/StringUtil.java b/src/main/java/org/bukkit/util/StringUtil.java
+index 458d5ebd..09bfb184 100644
+--- a/src/main/java/org/bukkit/util/StringUtil.java
++++ b/src/main/java/org/bukkit/util/StringUtil.java
+@@ -1,7 +1,7 @@
+ package org.bukkit.util;
+ 
+ import java.util.Collection;
+-import org.apache.commons.lang.Validate;
++import org.apache.commons.lang3.Validate;
+ import org.jetbrains.annotations.NotNull;
+ 
+ public class StringUtil {
+-- 
+2.55.0
+
