@@ -1,0 +1,64 @@
+From 842e84af83fccbd5faecaef347c701b669c0591e Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sun, 13 Sep 2026 08:32:49 +0800
+Subject: [PATCH] update-some-depends
+
+
+diff --git a/pom.xml b/pom.xml
+index 830c157c6..70ebe83b5 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -1,12 +1,14 @@
+-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++<?xml version="1.0" encoding="UTF-8" ?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+     <groupId>org.spigotmc</groupId>
+-    <artifactId>spigot</artifactId>
++    <artifactId>spigot-blue</artifactId>
+     <packaging>jar</packaging>
+     <version>1.13.2-R0.1-SNAPSHOT</version>
+     <name>SpigotBlue</name>
+-    <url>http://www.spigotmc.org</url>
++    <url>https://www.spigotmc.org</url>
+ 
+     <properties>
+         <skipTests>true</skipTests>
+@@ -15,7 +17,7 @@
+         <minecraft.version>1.13.2</minecraft.version>
+         <minecraft_version>1_13_R2</minecraft_version>
+         <buildtag.prefix>git-Bukkit-</buildtag.prefix>
+-        <buildtag.suffix></buildtag.suffix>
++        <!-- <buildtag.suffix></buildtag.suffix> -->
+         <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+         <maven.compiler.source>8</maven.compiler.source>
+         <maven.compiler.target>8</maven.compiler.target>
+@@ -56,20 +58,20 @@
+         <dependency>
+             <groupId>org.xerial</groupId>
+             <artifactId>sqlite-jdbc</artifactId>
+-            <version>3.25.2</version>
++            <version>3.45.0.0</version>
+             <scope>runtime</scope>
+         </dependency>
+         <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+-            <version>5.1.47</version>
++            <version>8.0.33</version>
+             <scope>runtime</scope>
+         </dependency>
+         <!-- testing -->
+         <dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+-            <version>4.12</version>
++            <version>4.13.2</version>
+             <scope>test</scope>
+         </dependency>
+         <dependency>
+-- 
+2.55.0
+
