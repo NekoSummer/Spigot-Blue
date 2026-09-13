@@ -1,0 +1,22 @@
+From 718aa1d4c0ace38396a4c2d702e79be6c6c3132e Mon Sep 17 00:00:00 2001
+From: XinYueNeko <3649745663@qq.com>
+Date: Sat, 12 Sep 2026 19:02:19 +0800
+Subject: [PATCH] fix-version-codename
+
+
+diff --git a/src/main/java/org/bukkit/Bukkit.java b/src/main/java/org/bukkit/Bukkit.java
+index c999af56..ce4c3efe 100644
+--- a/src/main/java/org/bukkit/Bukkit.java
++++ b/src/main/java/org/bukkit/Bukkit.java
+@@ -88,7 +88,7 @@ public final class Bukkit {
+         }
+ 
+         Bukkit.server = server;
+-        server.getLogger().info("This server is running " + getName() + " version " + getVersion() + " (Implementing API version " + getBukkitVersion() + ")");
++        server.getLogger().info("This server is running " + getName() + "「" + getCodename() + "」" + " version " + getVersion() + " (Implementing API version " + getBukkitVersion() + ")");
+     }
+ 
+     /**
+-- 
+2.55.0
+
